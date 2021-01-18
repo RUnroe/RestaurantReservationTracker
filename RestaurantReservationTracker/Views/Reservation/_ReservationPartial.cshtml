@@ -1,0 +1,27 @@
+﻿@model Reservation
+@{
+}
+@if (Model == null)
+{
+    <h1>No Reservations</h1>
+}
+else
+{
+    <div>
+        <div class="model-short-display">
+            <p>@Model</p>
+            <button>&#8743;</button>
+        </div>
+        <div class="model-full-display hidden">
+            <button>&#9998;</button>
+            <button>&#10006;</button>
+            <p>@Model.getTime()  @Model.getDate()</p>
+            <p>Name: @Model.Name</p>
+            <p>Size: @Model.Size</p>
+            <p>@(Model.InSmokingSection ? "Seat in smoking area" : "Do not seat in smoking area")</p>
+            <p>Special Instructions: @Model.SpecialInstructions</p>
+            <p>Contact Number: @Model.ContactNumber</p>
+            <p>@(Model.CanText ? "Okay to text contact number" : "Do not text contact number")</p>
+        </div>
+    </div>
+}

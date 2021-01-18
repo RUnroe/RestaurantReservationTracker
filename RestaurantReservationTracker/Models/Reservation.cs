@@ -32,11 +32,19 @@ namespace RestaurantReservationTracker.Models
 
         }
 
+        public string getDate()
+        {
+            return $"{this.DateTime.Split('-')[1]}/{this.DateTime.Split('-')[2].Split("T")[0]}";
+        }
 
+        public string getTime()
+        {
+            return this.DateTime.Split("T")[1];
+        }
         public override string ToString()
         {
-            string date = $"{this.DateTime.Split('-')[1]}/{this.DateTime.Split('-')[2]}" ;
-            string time = this.DateTime.Split("T")[1];
+            string date = this.getDate();
+            string time = this.getTime();
             return $"{time} {date} name"; 
         }
     }

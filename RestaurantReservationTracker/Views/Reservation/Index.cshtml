@@ -5,4 +5,18 @@
 <div>
     <h1 class="display-4">Reservations</h1>
 
+    <div>
+        @if (Model == null)
+        {
+            <h1>No movies provided</h1>
+        }
+        else
+        {
+            foreach (var reservation in Model)
+            {
+                <partial name="_ReservationPartial.cshtml" for="@reservation" />
+            }
+
+        }
+    </div>
 </div>
