@@ -45,6 +45,7 @@ namespace RestaurantReservationTracker.Controllers
         {
             if(ModelState.IsValid)
             {
+                //ADD
                 if (reservation.ID == -1)
                 {
                     int greatestIDValue = 0;
@@ -53,6 +54,17 @@ namespace RestaurantReservationTracker.Controllers
                         if (r.ID > greatestIDValue) { greatestIDValue = r.ID; }
                     }
                     reservation.ID = greatestIDValue + 1;
+                }//EDIT
+                else
+                {
+                    foreach (var r in ReservationList)
+                    {
+                        if (r.ID == reservation.ID)
+                        {
+                            ReservationList.Remove(r);
+                            break;
+                        }
+                    }
                 }
                 ReservationList.Add(reservation);
                 return Redirect("~/Reservation/Index");

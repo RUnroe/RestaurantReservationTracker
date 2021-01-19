@@ -14,7 +14,8 @@
         }
         else
         {
-            foreach (var reservation in Model)
+            List<Reservation> ReservationList = Model.OrderBy(reservation => reservation.DateTime).ToList();
+            foreach (var reservation in ReservationList)
             {
                 <partial name="_ReservationPartial.cshtml" for="@reservation" />
             }

@@ -14,7 +14,7 @@ else
             <button onclick="toggleReservationSection(@Model.ID)" class="toggleDetailsBtn">&#8744;</button>
         </div>
         <div class="model-full-display" >
-            <button onclick="location.href='@Url.Action("EditReservation/"+ @Model.ID + "","Reservation")'">&#9998;</button>
+            <button onclick="location.href='@Url.Action("EditReservation","Reservation", new { id = Model.ID })'">&#9998;</button>
             <button>&#10006;</button>
             <p>@Model.getTime()  @Model.getDate()</p>
             <p>Party Name: @Model.Name</p>

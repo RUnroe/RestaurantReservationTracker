@@ -4,7 +4,14 @@
 
 <div>
     <form asp-controller="Reservation" asp-action="AddReservation" method="post">
-        <input value="-1" asp-for="ID" type="hidden" />
+        @if (Model == null)
+        {
+            <input value="-1" asp-for="ID" type="hidden" />
+        }
+        else
+        {
+            <input asp-for="ID" type="hidden" />
+        }
         <div>
             <label for="DateTime">Date and Time:</label>
             <input asp-for="DateTime" type="datetime-local" />
@@ -18,7 +25,7 @@
             <input asp-for="Size" placeholder="Party Size" />
         </div>
         <div>
-            <label for="InSmokingSection">Seated in Smoking Section?:</label>
+            <label for="InSmokingSection">Seated in Smoking Section?</label>
             <input asp-for="InSmokingSection" />
         </div>
         <div>
@@ -30,7 +37,7 @@
             <input asp-for="ContactNumber" placeholder="Contact Number" />
         </div>
         <div>
-            <label for="CanText">Okay to Text Contact Number?:</label>
+            <label for="CanText">Okay to Text Contact Number?</label>
             <input asp-for="CanText" />
         </div>
         <button type="submit">Submit</button>
