@@ -15,7 +15,7 @@ else
         </div>
         <div class="model-full-display" >
             <button onclick="location.href='@Url.Action("EditReservation","Reservation", new { id = Model.ID })'">&#9998;</button>
-            <button>&#10006;</button>
+            <button onclick="location.href='@Url.Action("DeleteReservation","Reservation", new { id = Model.ID })'">&#10006;</button>
             <p>@Model.getTime()  @Model.getDate()</p>
             <p>Party Name: @Model.Name</p>
             <p>Party Size: @Model.Size</p>

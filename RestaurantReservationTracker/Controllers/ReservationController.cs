@@ -40,6 +40,20 @@ namespace RestaurantReservationTracker.Controllers
             return View("ReservationForm", r);
         }
 
+        [HttpGet]
+        public IActionResult DeleteReservation(int? id)
+        {
+            foreach (var r in ReservationList)
+            {
+                if (r.ID == id)
+                {
+                    ReservationList.Remove(r);
+                    break;
+                }
+            }
+            return Redirect("~/Reservation/Index");
+        }
+
         [HttpPost]
         public IActionResult AddReservation(Reservation reservation)
         {
