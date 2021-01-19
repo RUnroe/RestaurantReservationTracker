@@ -2,9 +2,11 @@
 @{
 }
 
+
+
 <div>
     <h1 class="display-4">Reservations</h1>
-
+    <button class="addReservation" onclick="location.href='@Url.Action("AddReservation","Reservation")'">+</button>
     <div>
         @if (Model == null)
         {

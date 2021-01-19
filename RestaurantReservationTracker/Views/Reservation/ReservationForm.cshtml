@@ -1,0 +1,38 @@
+﻿@model Reservation
+@{
+}
+
+<div>
+    <form asp-controller="Reservation" asp-action="AddReservation" method="post">
+        <input value="-1" asp-for="ID" type="hidden" />
+        <div>
+            <label for="DateTime">Date and Time:</label>
+            <input asp-for="DateTime" type="datetime-local" />
+        </div>
+        <div>
+            <label for="Name">Party Name:</label>
+            <input asp-for="Name" placeholder="Name of Party" />
+        </div>
+        <div>
+            <label for="Size">Party Size:</label>
+            <input asp-for="Size" placeholder="Party Size" />
+        </div>
+        <div>
+            <label for="InSmokingSection">Seated in Smoking Section?:</label>
+            <input asp-for="InSmokingSection" />
+        </div>
+        <div>
+            <label for="SpecialInstructions">Special Instructions:</label>
+            <textarea asp-for="SpecialInstructions" placeholder="Special Instructions"></textarea>
+        </div>
+        <div>
+            <label for="ContactNumber">Contact Number:</label>
+            <input asp-for="ContactNumber" placeholder="Contact Number" />
+        </div>
+        <div>
+            <label for="CanText">Okay to Text Contact Number?:</label>
+            <input asp-for="CanText" />
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</div>

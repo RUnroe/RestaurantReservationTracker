@@ -12,5 +12,12 @@
 
 
 .model-full-display {
+    overflow:hidden;
+    max-height:75em;
+    height:100%;
+    transition: max-height 0.4s ease;
+}
 
+.hidden > .model-full-display {
+    max-height: 0;
 }

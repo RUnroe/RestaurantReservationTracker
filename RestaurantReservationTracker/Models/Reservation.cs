@@ -7,7 +7,7 @@ namespace RestaurantReservationTracker.Models
 {
     public class Reservation
     {
-        public int ID { get; set; }
+        public int ID { get; set; } = -1;
         public string DateTime { get; set; } = "1970-1-1T00:00";
         public string Name { get; set; } = "[NO NAME]";
         public int Size { get; set; } = 0;
@@ -45,7 +45,7 @@ namespace RestaurantReservationTracker.Models
         {
             string date = this.getDate();
             string time = this.getTime();
-            return $"{time} {date} name"; 
+            return $"{time} {date} {this.Name}"; 
         }
     }
 }
