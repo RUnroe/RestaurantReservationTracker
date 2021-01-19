@@ -12,34 +12,35 @@
         {
             <input asp-for="ID" type="hidden" />
         }
-        <div>
+        <div class="form-group">
             <label for="DateTime">Date and Time:</label>
             <input asp-for="DateTime" type="datetime-local" />
         </div>
-        <div>
+        <div class="form-group">
             <label for="Name">Party Name:</label>
             <input asp-for="Name" placeholder="Name of Party" />
         </div>
-        <div>
+        <div class="form-group">
             <label for="Size">Party Size:</label>
             <input asp-for="Size" placeholder="Party Size" />
         </div>
-        <div>
+        <div class="form-group">
             <label for="InSmokingSection">Seated in Smoking Section?</label>
             <input asp-for="InSmokingSection" />
         </div>
-        <div>
+        <div class="form-group">
             <label for="SpecialInstructions">Special Instructions:</label>
             <textarea asp-for="SpecialInstructions" placeholder="Special Instructions"></textarea>
         </div>
-        <div>
+        <div class="form-group">
             <label for="ContactNumber">Contact Number:</label>
             <input asp-for="ContactNumber" placeholder="Contact Number" />
         </div>
-        <div>
+        <div class="form-group">
             <label for="CanText">Okay to Text Contact Number?</label>
             <input asp-for="CanText" />
         </div>
         <button type="submit">Submit</button>
     </form>
+    <button onclick="location.href='@Url.Action("Index","Reservation")'">Go Back</button>
 </div>

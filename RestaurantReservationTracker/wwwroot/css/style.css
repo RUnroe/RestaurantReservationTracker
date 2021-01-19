@@ -21,3 +21,24 @@
 .hidden > .model-full-display {
     max-height: 0;
 }
+img {
+    max-width:500px;
+    display:block;
+    margin:1em auto;
+    width:100%;
+}
+small {
+    padding:0.5em 1em;
+}
+
+.bg-green {
+    background-color: #167531;
+}
+
+.delete-btn {
+    background-color: #BF2A3D;
+}
+footer {
+    background-color: #BF2A3D;
+    color:#fff;
+}
