@@ -10,19 +10,24 @@ else
 
     <div data-id="@Model.ID" class="hidden">
         <div class="model-short-display">
-            <p>@Model</p>
+            <p >@Model</p>
             <button onclick="toggleReservationSection(@Model.ID)" class="toggleDetailsBtn">&#8744;</button>
         </div>
-        <div class="model-full-display" >
-            <button onclick="location.href='@Url.Action("EditReservation","Reservation", new { id = Model.ID })'">&#9998;</button>
-            <button onclick="location.href='@Url.Action("DeleteReservation","Reservation", new { id = Model.ID })'" class="delete-btn">&#10006;</button>
-            <p>@Model.getTime()  @Model.getDate()</p>
-            <p>Party Name: @Model.Name</p>
-            <p>Party Size: @Model.Size</p>
-            <p>@(Model.InSmokingSection ? "Seat in smoking area" : "Do not seat in smoking area")</p>
-            <p>@(String.IsNullOrEmpty(Model.SpecialInstructions) ? "No Special Instructions": "Special Instructions: " + @Model.SpecialInstructions)</p>
-            <p>Contact Number: @Model.ContactNumber</p>
-            <p>@(Model.CanText ? "Okay to text contact number" : "Do not text contact number")</p>
+        <div class="model-full-display row">
+
+            <div class="col-sm-11">
+                <p>@Model.getTime()  @Model.getDate()</p>
+                <p>Party Name: @Model.Name</p>
+                <p>Party Size: @Model.Size</p>
+                <p>@(Model.InSmokingSection ? "Seat in smoking area" : "Do not seat in smoking area")</p>
+                <p>@(String.IsNullOrEmpty(Model.SpecialInstructions) ? "No Special Instructions": "Special Instructions: " + @Model.SpecialInstructions)</p>
+                <p>Contact Number: @Model.ContactNumber</p>
+                <p>@(Model.CanText ? "Okay to text contact number" : "Do not text contact number")</p>
+            </div>
+            <div class="col-sm-1 button-group">
+                <button onclick="location.href='@Url.Action("DeleteReservation","Reservation", new { id = Model.ID })'" class="delete-btn btn btn-outline-secondary" title="Delete">&#10060;</button>
+                <button onclick="location.href='@Url.Action("EditReservation","Reservation", new { id = Model.ID })'" title="Edit" class="btn btn-outline-secondary">&#9998;</button>
+            </div>
         </div>
     </div>
 

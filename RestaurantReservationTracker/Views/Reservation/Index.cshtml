@@ -5,9 +5,11 @@
 
 
 <div>
-    <h1 class="display-4">Reservations</h1>
-    <button class="addReservation" onclick="location.href='@Url.Action("AddReservation","Reservation")'">+</button>
-    <div>
+    <div class="row">
+        <h1 class="display-4">Reservations</h1>
+        <button class="addReservation btn btn-outline-secondary" onclick="location.href='@Url.Action("AddReservation","Reservation")'" title="Add">&#43;</button>
+    </div>
+    <div class="reservation-list">
         @if (Model == null)
         {
             <h1>No movies provided</h1>
